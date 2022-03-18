@@ -1,6 +1,18 @@
 #/bin/bash
 echo Do not Worry about the errors it will run anyways
 username=$(whoami)
+
+#ALL DISTROS
+#mkdir ~/.scripts
+#echo alias vmi="'~/scripts/vm/install_and_delete/vm_install.sh'"  >> ~/.bashrc
+#echo alias vmd="'~/scripts/vm/install_and_delete/vm_delete.sh'" >> ~/.bashrc
+#echo alias vms="'~/scripts/vm/start_and_stop/vm_start.sh'" >> ~/.bashrc
+#echo alias vmfs="'~/scripts/vm/start_and_stop/vm_force_stop.sh'" >> ~/.bashrc
+#echo alias vmv="'~/scripts/vm/view/vm_view.sh'" >> ~/.bashrc
+#echo alias vmst="'~/scripts/vm/start_and_stop/vm_stop.sh'" >> ~/.bashrc
+#echo alias vml="'~/scripts/vm/view/vm_list.sh'" >> ~/.bashrc
+git pull https://github.com/MotorTruck1221/KVMinstall.git
+
 # Debian
 sudo apt update
 sudo apt install qemu qemu-kvm qemu-system qemu-utils -y
@@ -45,14 +57,5 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo dnf -y install virt-manager
 sudo dnf -y install virt-viewer
-#ALL DISTROS
-#mkdir ~/.scripts
-#echo alias vmi="'~/scripts/vm/install_and_delete/vm_install.sh'"  >> ~/.bashrc
-#echo alias vmd="'~/scripts/vm/install_and_delete/vm_delete.sh'" >> ~/.bashrc
-#echo alias vms="'~/scripts/vm/start_and_stop/vm_start.sh'" >> ~/.bashrc
-#echo alias vmfs="'~/scripts/vm/start_and_stop/vm_force_stop.sh'" >> ~/.bashrc
-#echo alias vmv="'~/scripts/vm/view/vm_view.sh'" >> ~/.bashrc
-#echo alias vmst="'~/scripts/vm/start_and_stop/vm_stop.sh'" >> ~/.bashrc
-#echo alias vml="'~/scripts/vm/view/vm_list.sh'" >> ~/.bashrc
-git pull https://github.com/MotorTruck1221/KVMinstall.git
+
 
