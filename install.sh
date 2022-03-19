@@ -3,15 +3,24 @@ echo Do not Worry about the errors it will run anyways
 username=$(whoami)
 
 #ALL DISTROS
-#mkdir ~/.scripts
-#echo alias vmi="'~/scripts/vm/install_and_delete/vm_install.sh'"  >> ~/.bashrc
-#echo alias vmd="'~/scripts/vm/install_and_delete/vm_delete.sh'" >> ~/.bashrc
-#echo alias vms="'~/scripts/vm/start_and_stop/vm_start.sh'" >> ~/.bashrc
-#echo alias vmfs="'~/scripts/vm/start_and_stop/vm_force_stop.sh'" >> ~/.bashrc
-#echo alias vmv="'~/scripts/vm/view/vm_view.sh'" >> ~/.bashrc
-#echo alias vmst="'~/scripts/vm/start_and_stop/vm_stop.sh'" >> ~/.bashrc
-#echo alias vml="'~/scripts/vm/view/vm_list.sh'" >> ~/.bashrc
-git pull https://github.com/MotorTruck1221/KVMinstall.git
+mkdir ~/.scripts
+sudo apt update && sudo apt install git
+sudo dnf install git
+sudo apt install wget
+sudo dnf install wget
+wget https://github.com/MotorTruck1221/KVMinstall/archive/refs/heads/master.zip -P ~/.scripts
+unzip ~/.scripts/master.zip
+#ArchVersioniscurrentlybroken
+#sudo pacman -S git
+#sudo pacman -S wget
+#End Arch Version is broken
+echo alias vmi="'~/.scripts/vm/install_and_delete/vm_install.sh'"  >> ~/.bashrc
+echo alias vmd="'~/.scripts/vm/install_and_delete/vm_delete.sh'" >> ~/.bashrc
+echo alias vms="'~/.scripts/vm/start_and_stop/vm_start.sh'" >> ~/.bashrc
+echo alias vmfs="'~/.scripts/vm/start_and_stop/vm_force_stop.sh'" >> ~/.bashrc
+echo alias vmv="'~/.scripts/vm/view/vm_view.sh'" >> ~/.bashrc
+echo alias vmst="'~/.scripts/vm/start_and_stop/vm_stop.sh'" >> ~/.bashrc
+echo alias vml="'~/.scripts/vm/view/vm_list.sh'" >> ~/.bashrc
 
 # Debian
 sudo apt update
@@ -50,7 +59,6 @@ sudo apt install git -y
 # I am currently working on the version for arch it does not work at the moment
 
 #Fedora
-sudo dnf -y install git
 sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm
 sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools
 sudo systemctl start libvirtd
