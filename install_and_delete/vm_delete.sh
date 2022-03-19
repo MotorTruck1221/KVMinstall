@@ -37,7 +37,7 @@ virsh undefine --domain $vm_name --nvram
 ##Note: The --domain option is givien if virsh does not recognize the name
 #
 ##delete file aswell
-rm -rf $vm_qcow3
+rm -rf ~/.local/share/images/$vm_name.qcow2
 #Do not worry about the errors you are fine
 
 
