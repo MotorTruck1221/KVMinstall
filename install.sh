@@ -43,7 +43,6 @@ echo alias vmv="'~/.scripts/KVMinstall-master/view/vm_view.sh'" >> ~/.zshrc
 echo alias vmst="'~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh'" >> ~/.zshrc
 echo alias vml="'~/.scripts/KVMinstall-master/view/vm_list.sh'" >> ~/.zshrc
 echo alias vmh="'~/.scripts/KVMinstall-master/list.sh" >> ~/.zshrc
-
 # Debian
 sudo apt update
 sudo apt install qemu qemu-kvm qemu-system qemu-utils -y
