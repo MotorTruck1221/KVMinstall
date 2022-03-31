@@ -20,6 +20,14 @@ Run the auto installer
 ```
 This will then install KVM on your computer simply enter your SUDO password
 
+- or alternatively(recommended):
+```bash
+cd Downloads
+curl -LO https://raw.githubusercontent.com/MotorTruck1221/KVMinstall/main/install.sh
+chmod u+x install.sh
+./install.sh
+```
+
     
 ## Some Commands you can use
 
