@@ -15,14 +15,34 @@ rm -rf ~/.scripts/master.zip
 #sudo pacman -S git
 #sudo pacman -S wget
 #End Arch Version is broken
+
+#Bash
 echo alias vmi="'~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh'"  >> ~/.bashrc
 echo alias vmd="'~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh'" >> ~/.bashrc
 echo alias vms="'~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh'" >> ~/.bashrc
 echo alias vmfs="'~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh'" >> ~/.bashrc
-echo alias vmv="'~/.scripts/KVMinstall-master/vm_view.sh'" >> ~/.bashrc
+echo alias vmv="'~/.scripts/KVMinstall-master/view/vm_view.sh'" >> ~/.bashrc
 echo alias vmst="'~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh'" >> ~/.bashrc
-echo alias vml="'~/.scripts/KVMinstall-master/vm_list.sh'" >> ~/.bashrc
-echo alias vmh="'~/.scripts/KVMinstall-master/list.sh"
+echo alias vml="'~/.scripts/KVMinstall-master/view/vm_list.sh'" >> ~/.bashrc
+echo alias vmh="'~/.scripts/KVMinstall-master/list.sh" >> ~/.bashrc
+#Fish
+echo alias vmi="'~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh'"  >> ~/.config/fish/config.fish
+echo alias vmd="'~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh'" >> ~/.config/fish/config.fish
+echo alias vms="'~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh'" >> ~/.config/fish/config.fish
+echo alias vmfs="'~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh'" >> ~/.config/fish/config.fish
+echo alias vmv="'~/.scripts/KVMinstall-master/view/vm_view.sh'" >> ~/.config/fish/config.fish
+echo alias vmst="'~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh'" >> ~/.config/fish/config.fish
+echo alias vml="'~/.scripts/KVMinstall-master/view/vm_list.sh'" >> ~/.config/fish/config.fish
+echo alias vmh="'~/.scripts/KVMinstall-master/list.sh" >> ~/.config/fish/config.fish
+#ZSH
+echo alias vmi="'~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh'"  >> ~/.zshrc
+echo alias vmd="'~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh'" >> ~/.zshrc
+echo alias vms="'~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh'" >> ~/.zshrc
+echo alias vmfs="'~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh'" >> ~/.zshrc
+echo alias vmv="'~/.scripts/KVMinstall-master/view/vm_view.sh'" >> ~/.zshrc
+echo alias vmst="'~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh'" >> ~/.zshrc
+echo alias vml="'~/.scripts/KVMinstall-master/view/vm_list.sh'" >> ~/.zshrc
+echo alias vmh="'~/.scripts/KVMinstall-master/list.sh" >> ~/.zshrc
 
 # Debian
 sudo apt update
