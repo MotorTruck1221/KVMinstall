@@ -7,7 +7,9 @@ import time
 import random
 
 
-
+def installv():
+    #Installs Utils for vm's
+    print('hi')
 def all():
     #Does things that all distros need to do
     os.system('mkdir ~/.scripts')
@@ -30,6 +32,7 @@ def all():
     os.system('wget https://github.com/MotorTruck1221/KVMinstall/archive/refs/heads/master.zip -P ~/.scripts')
     os.system('unzip ~/.scripts/master.zip -d ~/.scripts')
     os.system('rm -rf ~/.scripts/master.zip')
+    installv()
 
 #Getting the Shell 
 shellp = environ['SHELL']
@@ -48,12 +51,40 @@ if os.name in ('nt', 'dos'):
     print("Sorry! This is only for GNU/Linux.")
     exit()
 
+#Add aliases to the shells
 def aliasbash():
-    print('penis')
+    os.system('echo alias vmi='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh"'+"'"+'  >> ~/.bashrc')
+    os.system('echo alias vmd='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh"'+"'"+' >> ~/.bashrc')
+    os.system('echo alias vms='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh"'+"'"+' >> ~/.bashrc')
+    os.system('echo alias vmfs='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh"'+"'"+' >> ~/.bashrc')
+    os.system('echo alias vmv='+"'"+'"~/.scripts/KVMinstall-master/view/vm_view.sh"'+"'"+'>> ~/.bashrc')
+    os.system('echo alias vmst='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh"'+"'"+' >> ~/.bashrc')
+    os.system('echo alias vml='+"'"+'"~/.scripts/KVMinstall-master/view/vm_list.sh"'+"'"+' >> ~/.bashrc')
+    os.system('echo alias vmh='+"'"+'"~/.scripts/KVMinstall-master/list.sh"'+"'"+'>> ~/.bashrc')
+    aliasfish()
+    aliaszsh()
 def aliasfish():
-    print('poop')
+    os.system('echo alias vmi='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh"'+"'"+'  >> ~/.config/fish/config.fish')
+    os.system('echo alias vmd='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh"'+"'"+' >> ~/.config/fish/config.fish')
+    os.system('echo alias vms='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh"'+"'"+' >> ~/.config/fish/config.fish')
+    os.system('echo alias vmfs='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh"'+"'"+' >> ~/.config/fish/config.fish')
+    os.system('echo alias vmv='+"'"+'"~/.scripts/KVMinstall-master/view/vm_view.sh"'+"'"+'>> ~/.config/fish/config.fish')
+    os.system('echo alias vmst='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh"'+"'"+' >> ~/.config/fish/config.fish')
+    os.system('echo alias vml='+"'"+'"~/.scripts/KVMinstall-master/view/vm_list.sh"'+"'"+' >> ~/.config/fish/config.fish')
+    os.system('echo alias vmh='+"'"+'"~/.scripts/KVMinstall-master/list.sh"'+"'"+'>> ~/.config/fish/config.fish')
+    aliasbash()
+    aliasfish()
 def aliaszsh():
-    print('yummy')
+    os.system('echo alias vmi='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_install.sh"'+"'"+'  >> ~/.zshrc')
+    os.system('echo alias vmd='+"'"+'"~/.scripts/KVMinstall-master/install_and_delete/vm_delete.sh"'+"'"+' >> ~/.zshrc')
+    os.system('echo alias vms='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_start.sh"'+"'"+' >> ~/.zshrc')
+    os.system('echo alias vmfs='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_force_stop.sh"'+"'"+' >> ~/.zshrc')
+    os.system('echo alias vmv='+"'"+'"~/.scripts/KVMinstall-master/view/vm_view.sh"'+"'"+'>> ~/.zshrc')
+    os.system('echo alias vmst='+"'"+'"~/.scripts/KVMinstall-master/start_and_stop/vm_stop.sh"'+"'"+' >> ~/.zshrc')
+    os.system('echo alias vml='+"'"+'"~/.scripts/KVMinstall-master/view/vm_list.sh"'+"'"+' >> ~/.zshrc')
+    os.system('echo alias vmh='+"'"+'"~/.scripts/KVMinstall-master/list.sh"'+"'"+'>> ~/.zshrc')
+    aliasbash()
+    aliasfish()
 #Taking the shell and running the neccesary code to add aliases
 if '/bin/fish' in shellp:
     aliasfish()
