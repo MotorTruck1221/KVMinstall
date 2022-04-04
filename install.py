@@ -34,7 +34,7 @@ def all():
 #Getting the Shell 
 shellp = environ['SHELL']
 #Getting what the distro is based off of
-distr = os.system('distro -j | grep -a "like"')
+distr = str(os.system('distro -j | grep -a "like"'))
 distrr = distro.name()
 if "Fedora Linux" in distrr:
     distr = distrr
