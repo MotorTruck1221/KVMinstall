@@ -9,7 +9,90 @@ import random
 
 def installv():
     #Installs Utils for vm's
-    print('hi')
+    if 'Fedora Linux' in distr:
+        os.system('sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm')
+        os.system('sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools')
+        os.system('sudo systemctl start libvirtd')
+        os.system('sudo systemctl enable libvirtd')
+        os.system('sudo dnf -y install virt-manager')
+        os.system('sudo dnf -y install virt-viewer')
+    if '"like": "fedora"' in distr:
+        os.system('sudo dnf -y install bridge-utils libvirt virt-install qemu-kvm')
+        os.system('sudo dnf -y install libvirt-devel virt-top libguestfs-tools guestfs-tools')
+        os.system('sudo systemctl start libvirtd')
+        os.system('sudo systemctl enable libvirtd')
+        os.system('sudo dnf -y install virt-manager')
+        os.system('sudo dnf -y install virt-viewer')
+    if 'Debian Linux' in distr:
+        os.system('sudo apt update')
+        os.system('sudo apt install qemu qemu-kvm qemu-system qemu-utils -y')
+        os.system('sudo apt install libvirt-clients libvirt-daemon-system virtinst -y')
+        os.system('sudo virsh net-start default')
+        os.system('sudo virsh net-start default')
+        os.system('sudo adduser "$username" libvirt')
+        os.system('sudo systemctl enable --now libvirtd')
+    if '"like": "debian"' in distr:
+        os.system('sudo apt update')
+        os.system('sudo apt install qemu qemu-kvm qemu-system qemu-utils -y')
+        os.system('sudo apt install libvirt-clients libvirt-daemon-system virtinst -y')
+        os.system('sudo virsh net-start default')
+        os.system('sudo virsh net-start default')
+        os.system('sudo adduser "$username" libvirt')
+        os.system('sudo systemctl enable --now libvirtd')
+        os.system('sudo apt install virt-viewer -y')
+        os.system('sudo apt install git -y')
+    if 'Ubuntu Linux' in distr:
+        os.system('sudo apt update')
+        os.system('sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y')
+        os.system('sudo adduser "$username" libvirt')
+        os.system('sudo systemctl enable --now libvirtd')
+        os.system('sudo apt install virt-manager -y')
+        os.system('sudo apt install virt-viewer -y')
+        os.system('sudo apt install git -y')
+    if '"like": "ubuntu"' in distr:
+        os.system('sudo apt update')
+        os.system('sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y')
+        os.system('sudo adduser "$username" libvirt')
+        os.system('sudo systemctl enable --now libvirtd')
+        os.system('sudo apt install virt-manager -y')
+        os.system('sudo apt install virt-viewer -y')
+        os.system('sudo apt install git -y')
+    if "Arch Linux" in distr: 
+        os.system('sudo pacman -S virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat')
+        os.system('sudo systemctl enable libvirtd.service')
+        os.system('sudo systemctl start libvirtd.service')
+        os.system('sudo pacman -S vim')
+        os.system('sudo pacman -S nano')
+        #sudo nano /etc/libvirt/libvirtd.conf
+        # make unix_sock_group = "libvirt"
+        # make unix_sock_rw_perms = "0770"
+        os.system('newgrp libvirt')
+        os.system('sudo systemctl restart libvirtd.service')
+        os.system('sudo modprobe -r kvm_intel')
+        os.system('sudo modprobe kvm_intel nested=1')
+        os.system('echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf')
+        os.system('sudo pacman -S virt-viewer')
+        os.system('sudo pacman -S git')
+        print('To finish this on arch you must add to the lines unix_sock_group, unix_sock_rw_perms \n And change unix_sock_group to "libvirt" \n and change unix_sock_rw_perms to "0770')
+        os.system('sudo nano /etc/libvirt/libvirt.conf')
+    if '"like": "arch"' in distr:
+        os.system('sudo pacman -S virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat')
+        os.system('sudo systemctl enable libvirtd.service')
+        os.system('sudo systemctl start libvirtd.service')
+        os.system('sudo pacman -S vim')
+        os.system('sudo pacman -S nano')
+        #sudo nano /etc/libvirt/libvirtd.conf
+        # make unix_sock_group = "libvirt"
+        # make unix_sock_rw_perms = "0770"
+        os.system('newgrp libvirt')
+        os.system('sudo systemctl restart libvirtd.service')
+        os.system('sudo modprobe -r kvm_intel')
+        os.system('sudo modprobe kvm_intel nested=1')
+        os.system('echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf')
+        os.system('sudo pacman -S virt-viewer')
+        os.system('sudo pacman -S git')
+        print('To finish this on arch you must add to the lines unix_sock_group, unix_sock_rw_perms \n And change unix_sock_group to "libvirt" \n and change unix_sock_rw_perms to "0770')
+        os.system('sudo nano /etc/libvirt/libvirt.conf')
 def all():
     #Does things that all distros need to do
     os.system('mkdir ~/.scripts')
